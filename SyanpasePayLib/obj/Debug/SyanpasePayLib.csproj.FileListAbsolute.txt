@@ -1,0 +1,13 @@
+C:\Users\nikunjmange\Source\Workspaces\Visage Payroll\VisagePayrollSystem\VisagePayrollSystem\SyanpasePayLib\bin\Debug\SyanpasePayLib.dll.config
+C:\Users\nikunjmange\Source\Workspaces\Visage Payroll\VisagePayrollSystem\VisagePayrollSystem\SyanpasePayLib\bin\Debug\SyanpasePayLib.dll
+C:\Users\nikunjmange\Source\Workspaces\Visage Payroll\VisagePayrollSystem\VisagePayrollSystem\SyanpasePayLib\bin\Debug\SyanpasePayLib.pdb
+C:\Users\nikunjmange\Source\Workspaces\Visage Payroll\VisagePayrollSystem\VisagePayrollSystem\SyanpasePayLib\bin\Debug\EntityFramework.dll
+C:\Users\nikunjmange\Source\Workspaces\Visage Payroll\VisagePayrollSystem\VisagePayrollSystem\SyanpasePayLib\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nikunjmange\Source\Workspaces\Visage Payroll\VisagePayrollSystem\VisagePayrollSystem\SyanpasePayLib\bin\Debug\Newtonsoft.Json.dll
+C:\Users\nikunjmange\Source\Workspaces\Visage Payroll\VisagePayrollSystem\VisagePayrollSystem\SyanpasePayLib\bin\Debug\RestSharp.dll
+C:\Users\nikunjmange\Source\Workspaces\Visage Payroll\VisagePayrollSystem\VisagePayrollSystem\SyanpasePayLib\bin\Debug\EntityFramework.xml
+C:\Users\nikunjmange\Source\Workspaces\Visage Payroll\VisagePayrollSystem\VisagePayrollSystem\SyanpasePayLib\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nikunjmange\Source\Workspaces\Visage Payroll\VisagePayrollSystem\VisagePayrollSystem\SyanpasePayLib\bin\Debug\Newtonsoft.Json.xml
+C:\Users\nikunjmange\Source\Workspaces\Visage Payroll\VisagePayrollSystem\VisagePayrollSystem\SyanpasePayLib\bin\Debug\RestSharp.xml
+C:\Users\nikunjmange\Source\Workspaces\Visage Payroll\VisagePayrollSystem\VisagePayrollSystem\SyanpasePayLib\obj\Debug\SyanpasePayLib.dll
+C:\Users\nikunjmange\Source\Workspaces\Visage Payroll\VisagePayrollSystem\VisagePayrollSystem\SyanpasePayLib\obj\Debug\SyanpasePayLib.pdb
