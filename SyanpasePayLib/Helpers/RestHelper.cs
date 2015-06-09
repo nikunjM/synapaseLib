@@ -17,25 +17,96 @@ namespace SyanpasePayLib.Helpers
     {
         public dynamic APICalls(JObject ljson, string endpoints, string method)
         {
-            var httpReq = (HttpWebRequest)HttprequestObject(endpoints, method);
+            HttpWebRequest httpReq = (HttpWebRequest)HttprequestObject(endpoints, method);
             using (var streamWriter = new StreamWriter(httpReq.GetRequestStream()))
             {
                 streamWriter.Write(ljson);
                 streamWriter.Flush();
                 streamWriter.Close();
             }
-            var httpResponse = (HttpWebResponse)httpReq.GetResponse();
             var result = "";
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            HttpWebResponse httpResponse;
+            try
             {
-                result = streamReader.ReadToEnd();
+                httpResponse = (HttpWebResponse)httpReq.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    result = streamReader.ReadToEnd();
+                }
             }
+            catch (WebException e)
+            {
+                Console.WriteLine("This program is expected to throw WebException on successful run." +
+                                    "\n\nException Message :" + e.Message);
+                if (e.Status == WebExceptionStatus.ProtocolError)
+                {
+                    Console.WriteLine("Status Code : {0}", ((HttpWebResponse)e.Response).StatusCode);
+                    Console.WriteLine("Status Description : {0}", ((HttpWebResponse)e.Response).StatusDescription);
+                    using (Stream data = e.Response.GetResponseStream())
+                    using (var reader = new StreamReader(data))
+                    {
+                        string text = reader.ReadToEnd();
+                        Console.WriteLine(text);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
             return result;
             //return "Success";
             //not sure what to return 
             //here i have to add sql server code to enter into database
         }
-        public dynamic HttprequestObject(string endpoints, string method)
+        public dynamic APICalls(string ljson, string endpoints, string method)
+        {
+            HttpWebRequest httpReq = (HttpWebRequest)HttprequestObject(endpoints, method);
+            using (var streamWriter = new StreamWriter(httpReq.GetRequestStream()))
+            {
+                streamWriter.Write(ljson);
+                streamWriter.Flush();
+                streamWriter.Close();
+            }
+            var result = "";
+            HttpWebResponse httpResponse;
+            try
+            {
+                httpResponse = (HttpWebResponse)httpReq.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    result = streamReader.ReadToEnd();
+                }
+            }
+            catch (WebException e)
+            {
+                Console.WriteLine("This program is expected to throw WebException on successful run." +
+                                    "\n\nException Message :" + e.Message);
+                if (e.Status == WebExceptionStatus.ProtocolError)
+                {
+                    Console.WriteLine("Status Code : {0}", ((HttpWebResponse)e.Response).StatusCode);
+                    Console.WriteLine("Status Description : {0}", ((HttpWebResponse)e.Response).StatusDescription);
+                    using (Stream data = e.Response.GetResponseStream())
+                    using (var reader = new StreamReader(data))
+                    {
+                        string text = reader.ReadToEnd();
+                        Console.WriteLine(text);
+                        result = text;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            return result;
+            //return "Success";
+            //not sure what to return 
+            //here i have to add sql server code to enter into database
+        }
+        public HttpWebRequest HttprequestObject(string endpoints, string method)
         {
             string url = Settings.API_TEST_VALUE + endpoints;
             var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);

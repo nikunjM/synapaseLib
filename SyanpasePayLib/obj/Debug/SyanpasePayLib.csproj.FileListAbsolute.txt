@@ -11,3 +11,4 @@ C:\Users\nikunjmange\Source\Workspaces\Visage Payroll\VisagePayrollSystem\Visage
 C:\Users\nikunjmange\Source\Workspaces\Visage Payroll\VisagePayrollSystem\VisagePayrollSystem\SyanpasePayLib\bin\Debug\RestSharp.xml
 C:\Users\nikunjmange\Source\Workspaces\Visage Payroll\VisagePayrollSystem\VisagePayrollSystem\SyanpasePayLib\obj\Debug\SyanpasePayLib.dll
 C:\Users\nikunjmange\Source\Workspaces\Visage Payroll\VisagePayrollSystem\VisagePayrollSystem\SyanpasePayLib\obj\Debug\SyanpasePayLib.pdb
+C:\Users\nikunjmange\Source\Workspaces\Visage Payroll\VisagePayrollSystem\VisagePayrollSystem\SyanpasePayLib\obj\Debug\SyanpasePayLib.csprojResolveAssemblyReference.cache

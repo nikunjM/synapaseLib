@@ -28,8 +28,18 @@ namespace SyanpasePayLib.EndPoints
         {
             RestHelper lhelp = new RestHelper();
             JObject ljson = CreatUserJson(lacc);
+
+
+            bool check1 = AllStringPropertyValuesAreNonEmpty(ljson);
+
+            /*
+            var instOfA = ljson;
+            bool isAnyPropEmpty = instOfA.GetType().GetProperties()
+                 .Where(p => p.GetValue(instOfA) is string) // selecting only string props
+                 .Any(p => string.IsNullOrWhiteSpace((p.GetValue(instOfA) as string)));
+            */
+
             string results = lhelp.APICalls(ljson, Settings.ACCOUNT_CREATE_ENDPOINT, Settings.ACCOUNT_CREATE_METHOD);
-            
             JToken token = JObject.Parse(results);
            // Account lacc = new Account();
             lacc.expires_at = (string)token.SelectToken("expires_at");
@@ -84,6 +94,7 @@ namespace SyanpasePayLib.EndPoints
                 new JProperty("password", lacc.password),
                 new JProperty("client_id", Settings.Globals.CLIENT_ID),
                 new JProperty("client_secret", Settings.Globals.CLIENT_SECRET)
+                
         );
             return pin;
         }
@@ -130,6 +141,15 @@ namespace SyanpasePayLib.EndPoints
                 new JProperty("client_secret", Settings.Globals.CLIENT_SECRET)
         );
             return pin;
+        }
+        public static bool AllStringPropertyValuesAreNonEmpty(object myObject)
+        {
+            var allStringPropertyValues =
+                from property in myObject.GetType().GetProperties()
+                where property.PropertyType == typeof(string) && property.CanRead
+                select (string)property.GetValue(myObject);
+
+            return allStringPropertyValues.All(value => !string.IsNullOrEmpty(value));
         }
     }
 }

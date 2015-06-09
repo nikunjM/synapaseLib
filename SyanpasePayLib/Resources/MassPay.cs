@@ -3,30 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace SyanpasePayLib.Resources
 {
     public class MassPay
     {
+        public string legal_name { get; set; }
+        public string account_number { get; set; }
+        public string routing_number { get; set; }
         public string amount { get; set; }
         public string trans_type { get; set; }
-        public string card_id { get; set; }
-        public string oauth_consumer_key { get; set; }
-        public List<MassPay> mass_pays { get; set; }
-        public int account_class { get; set; }
-        public string account_number_string { get; set; }
-        public int account_type { get; set; }
-        public string date { get; set; }
-        public int facilitator_fee { get; set; }
-        public double fee { get; set; }
-        public int id { get; set; }
-        public string name_on_account { get; set; }
-        public object resource_uri { get; set; }
-        public string routing_number_string { get; set; }
-        public int status { get; set; }
+        public string account_class { get; set; }
+        public string account_type { get; set; }
         public string status_url { get; set; }
         public string supp_id { get; set; }
-        
-        bool sucess { get; set; }
+        public UserInfo user { get; set; }
     }
+
+    public class MassPayList
+    {
+        public string oauth_consumer_key { get; set; }
+        public string bank_id { get; set; }
+        public string facilitator_fee { get; set; }
+        public IList<MassPay> mass_pays { get; set; }
+
+    }
+
+
+    public class UserInfo
+    {
+        public string email{get;set;}
+        public string phone_number { get; set; }
+        public string ip_address { get; set; }
+        public string dob { get; set; }
+        public string risk_score { get; set; }
+        public string ssn { get; set; }
+    }
+
+
 }

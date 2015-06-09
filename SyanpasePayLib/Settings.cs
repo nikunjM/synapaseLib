@@ -139,6 +139,23 @@ namespace SyanpasePayLib
         public const string SHOW_CARDS_METHOD = "POST";
         public const string SHOW_CARDS_ENDPOINT = "card/show";
 
+        //CAN BE USED FOR SELECTING METHOD AND ENDPOINT FOR MASS PAY
+        public const string Add_MASS_PAY_REQUEST_METHOD = "POST";
+        public const string Add_MASS_PAY_REQUEST_ENDPOINT = "masspay/add";
+
+        //CAN BE USED FOR SELECTING METHOD AND ENDPOINT FOR SHOW CARDS
+        public const string Add_MASS_PAY_REQUEST_BYCARDS_METHOD = "POST";
+        public const string Add_MASS_PAY_REQUEST_BYCARDS_ENDPOINT = "masspay/add";
+
+        //CAN BE USED FOR SELECTING METHOD AND ENDPOINT FOR SHOW MASSPAY
+        public const string SHOW_MASS_PAY_REQUEST_METHOD = "POST";
+        public const string SHOW_MASS_PAY_REQUEST_ENDPOINT = "masspay/show";
+
+        //CAN BE USED FOR SELECTING METHOD AND ENDPOINT FOR CANCLE MASSPAY
+        public const string CANCEL_MASS_PAY_REQUEST_METHOD = "POST";
+        public const string CANCEL_MASS_PAY_REQUEST_ENDPOINT = "masspay/cancel";
+        
+
 
 
 
@@ -201,9 +218,7 @@ namespace SyanpasePayLib
                 CLIENT_ID = "836db45feb835d2cd5d2";
                 CLIENT_SECRET = "ca1c5db06d50d047ac294f4acb31cf0958bcfdf6";
                 API_TEST_VALUE = "https://sandbox.synapsepay.com/api/v2/";
-
-
-               
+                              
             } // default value
 
             // public get, and private set for strict access control

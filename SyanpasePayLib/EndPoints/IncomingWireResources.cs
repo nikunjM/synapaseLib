@@ -44,6 +44,7 @@ namespace SyanpasePayLib.EndPoints
                 new JProperty("oauth_consumer_key", lWire.oauth_consumer_key)
                 );
             return pin;
+
         }
         public JObject ViewIncomingWireNoticeJson(SyanpasePayLib.Resources.Wire lWire)
         {
@@ -60,5 +61,6 @@ namespace SyanpasePayLib.EndPoints
                 );
             return pin;
         }
+
     }
 }
